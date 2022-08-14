@@ -1,17 +1,6 @@
 package com.example.Starbux.Product;
 
 import java.util.Optional;
-//Testing
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-//
-import net.bytebuddy.implementation.bytecode.collection.ArrayLength;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class ProductService {

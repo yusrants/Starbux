@@ -4,7 +4,6 @@ import com.example.Starbux.Customer.Customer;
 import com.example.Starbux.Customer.CustomerRepository;
 import com.example.Starbux.Customer.CustomerService;
 
-import java.util.List;
 import java.util.Random;
 import java.time.LocalDate;
 
@@ -23,7 +22,7 @@ import org.slf4j.LoggerFactory;
 @RestController
 public class ShopController {
 
-    private final OrderRepository repository;
+    private final OrderRepository orderRepository;
     private final CustomerRepository customerRepository;
     private final ProductRepository productRepository;
     private OrderService orderService;
@@ -32,11 +31,11 @@ public class ShopController {
     private static final Logger log = LoggerFactory.getLogger(ShopController.class);
 
     ShopController(OrderRepository orderRepository, ProductRepository productRepository, CustomerRepository customerRepository) {
-      this.repository = orderRepository;
-      this.customerRepository = customerRepository;
-      this.productRepository = productRepository;
-      this.orderService = new OrderService(productRepository);
-      this.customerService = new CustomerService(customerRepository);
+          this.orderRepository = orderRepository;
+          this.customerRepository = customerRepository;
+          this.productRepository = productRepository;
+          this.orderService = new OrderService(productRepository);
+          this.customerService = new CustomerService(customerRepository);
     }
   
 
@@ -48,12 +47,15 @@ public class ShopController {
       Msg += productRepository.findAll().toString();
       return ResponseEntity.ok(Msg);
     }  
+
+    // Handling POST request for placing orders:
     @PostMapping("/shop/placeOrder")
     ResponseEntity<OrderResponse> placeOrder(@RequestBody OrderDTO newOrder) {
       OrderResponse response = new OrderResponse();
 
+      // First verify the order to make sure any invalid orders are not saved in the repo
       if(orderService.verifyOrder(newOrder)) {
-            repository.save(newOrder);
+            orderRepository.save(newOrder);
             
             // Calculating cart total for the order
             orderService.calculateTotal(newOrder);
@@ -86,6 +88,7 @@ public class ShopController {
             return ResponseEntity.ok(response);
       }
       else {
+        log.info("Invalid Request body received!");
         response.setMessage("Invalid Order Object Format. Customer email/username or items not received!");
         return ResponseEntity.ok(response);
       }

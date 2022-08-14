@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class Utils {
     public Utils() {}
@@ -33,37 +32,6 @@ public class Utils {
             }
         return items;
     }
-
-/*     public static List<Long> getMostCommonElement(List<Long> data){
-        Long mostCommon = null;
-        List<Long> frequents = new ArrayList<Long>();
-
-        if (data != null) {
-            List<Long> sorted = data.stream().sorted().collect(Collectors.toList()); 
-            Long last = null;
-            int mostCount = 0;
-            int lastCount = 0;
-
-            for (Long item : sorted) {
-                if (item.equals(last)) {
-                    lastCount++;
-                } else if (lastCount > mostCount) {
-                    mostCount = lastCount;
-                    mostCommon = last;
-                    frequents = new ArrayList<Long>();
-                    frequents.add(mostCommon);
-                }
-                if(lastCount == mostCount){
-                    frequents.add(last);
-                }
-                last = item;
-            }
-
-            // In case the list doesn't have any unique values
-            if(mostCommon == null) frequents.add(last);
-        }
-        return frequents;
-    } */
 
     public static List<Long> getMostCommonElement(List<Long> arr){
         Map<Long, Integer> count = new HashMap<Long, Integer>();
