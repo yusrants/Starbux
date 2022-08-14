@@ -42,7 +42,9 @@ public class ShopController {
 
     @GetMapping("/")
     ResponseEntity<String> all() {
-      String Msg = "Welcome to Starbux";
+      String Msg = "Welcome to Starbux \n";
+      Msg += "You can order any drink with any number of toppings!\n";
+      Msg += "Here's a list of our products:\n";
       Msg += productRepository.findAll().toString();
       return ResponseEntity.ok(Msg);
     }  
