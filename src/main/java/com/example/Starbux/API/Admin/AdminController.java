@@ -32,9 +32,7 @@ public class AdminController {
       this.productService = new ProductService(productRepo);
     }
   
-  
-    // Aggregate root
-    // tag::get-aggregate-root[]
+
     @GetMapping("/admin/products")
     List<Product> all() {
       return productRepo.findAll();
@@ -60,7 +58,6 @@ public class AdminController {
     }
   
     // Single item
-    
     @GetMapping("/admin/products/{id}")
     Product one(@PathVariable Long id) {
       

@@ -4,9 +4,11 @@ import com.example.Starbux.Customer.Customer;
 import com.example.Starbux.Customer.CustomerRepository;
 import com.example.Starbux.Customer.CustomerService;
 
+import java.util.List;
 import java.util.Random;
 import java.time.LocalDate;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,6 +25,7 @@ public class ShopController {
 
     private final OrderRepository repository;
     private final CustomerRepository customerRepository;
+    private final ProductRepository productRepository;
     private OrderService orderService;
     private CustomerService customerService;
 
@@ -31,13 +34,18 @@ public class ShopController {
     ShopController(OrderRepository orderRepository, ProductRepository productRepository, CustomerRepository customerRepository) {
       this.repository = orderRepository;
       this.customerRepository = customerRepository;
+      this.productRepository = productRepository;
       this.orderService = new OrderService(productRepository);
       this.customerService = new CustomerService(customerRepository);
     }
   
 
-    // end::get-aggregate-root[]
-  
+    @GetMapping("/")
+    ResponseEntity<String> all() {
+      String Msg = "Welcome to Starbux";
+      Msg += productRepository.findAll().toString();
+      return ResponseEntity.ok(Msg);
+    }  
     @PostMapping("/shop/placeOrder")
     ResponseEntity<OrderResponse> placeOrder(@RequestBody OrderDTO newOrder) {
       OrderResponse response = new OrderResponse();
