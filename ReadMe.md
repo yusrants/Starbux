@@ -34,8 +34,7 @@ An API that allows admins to:
 2. {{base_url}}/admin/report/customers
 3. {{base_url}}/admin/report/toppings
 4. {{base_url}}/admin/customers
-5. {{base_url}}/customers
-6. {{base_url}}/admin/orders
+5. {{base_url}}/admin/orders
 ```
 **Shop API**:
 An API that will be used to order drinks with any of the topping combinations.
