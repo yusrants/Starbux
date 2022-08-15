@@ -28,14 +28,25 @@ An API that allows admins to:
 **Reports:**
 - Total amount of the orders per customer.
 - Most used toppings for drinks.
-
+## Admin API endpoints
+```
+1. {{base_url}}/admin/products
+2. {{base_url}}/admin/report/customers
+3. {{base_url}}/admin/report/toppings
+4. {{base_url}}/admin/customers
+5. {{base_url}}/customers
+6. {{base_url}}/admin/orders
+```
 **Shop API**:
 An API that will be used to order drinks with any of the topping combinations.
 - The current amount of the cart and the products
 should be communicated back to the caller of the API.
 - When finalizing the order, the original amount and the discounted amount should be
 communicated back to the caller of the API.
-
+## Shop API endpoints
+```
+1. {{base_url}}/shop/placeOrder
+```
 ## Postman Collection
 https://www.postman.com/warped-satellite-505301/workspace/starbux/collection/14433878-bd815db3-b4ae-4495-b8cf-bba14a2aaaf1?action=share&creator=14433878
 ## Notes
