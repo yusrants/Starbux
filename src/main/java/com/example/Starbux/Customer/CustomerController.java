@@ -17,15 +17,11 @@ public class CustomerController {
     CustomerController(CustomerRepository repository) {
       this.repository = repository;
     }
-  
-  
-    // Aggregate root
-    // tag::get-aggregate-root[]
+
     @GetMapping("/admin/customers")
     List<Customer> all() {
       return repository.findAll();
     }
-    // end::get-aggregate-root[]
   
     @PostMapping("/admin/customers")
     Customer newCustomer(@RequestBody Customer newCustomer) {
@@ -33,7 +29,6 @@ public class CustomerController {
     }
   
     // Single item
-    
     @GetMapping("/admin/customers/{id}")
     Customer one(@PathVariable Long id) {
       
