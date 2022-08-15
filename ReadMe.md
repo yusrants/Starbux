@@ -1,5 +1,5 @@
 # Starbux
-### Starbux is an online coffee place startup, where users can order drinks/toppings and admins can create/update/delete drinks/toppings and have access to reports.
+**Starbux is an online coffee place startup, where users can order drinks/toppings and admins can create/update/delete drinks/toppings and have access to reports.**
 #### List of Available Products
 ##### Drinks:
 - Black Coffee - 4 eur
