@@ -24,14 +24,14 @@ An API that allows admins to:
 - Total amount of the orders per customer.
 - Most used toppings for drinks.
 
-**Shop API**
-**An API that will be used to order drinks with any of the topping combinations.
+**Shop API**:
+An API that will be used to order drinks with any of the topping combinations.
 - The current amount of the cart and the products
 should be communicated back to the caller of the API.
 - When finalizing the order, the original amount and the discounted amount should be
 communicated back to the caller of the API.
 
-## POSTMAN Collection
+## Postman Collection
 https://www.postman.com/warped-satellite-505301/workspace/starbux/collection/14433878-bd815db3-b4ae-4495-b8cf-bba14a2aaaf1?action=share&creator=14433878
 ## Notes
 ### Endpoint for placing an order: *base_url/shop/placeOrder*
