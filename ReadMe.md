@@ -12,8 +12,7 @@
 - Chocolate sauce - 5 eur
 - Lemon - 2 eur
 ## Running the application:
-1. Clone the app
-2. Go to the app root folder and run the following command to start the application:
+Go to the app root folder and run the following command to start the application:
 ```
 mvn spring-boot:run
 ```
