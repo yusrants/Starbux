@@ -11,7 +11,12 @@
 - Hazelnut syrup - 3 eur
 - Chocolate sauce - 5 eur
 - Lemon - 2 eur
-
+## Running the application:
+1. Clone the app
+2. Go to the app root folder and run the following command to start the application:
+```
+mvn spring-boot:run
+```
 ## API Documentation:
 All the required details regarding each endpoint have been added to the following Postman documentation:
 https://www.postman.com/warped-satellite-505301/workspace/5c7f7617-275e-4ac5-84e9-f8efdcedf030/documentation/14433878-bd815db3-b4ae-4495-b8cf-bba14a2aaaf1
