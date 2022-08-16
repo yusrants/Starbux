@@ -28,6 +28,7 @@ https://www.postman.com/warped-satellite-505301/workspace/5c7f7617-275e-4ac5-84e
 An API that allows admins to:
 - create/update/delete products and toppings.
 - Show Reports
+
 **Reports:**
 - Total amount of the orders per customer.
 - Most used toppings for drinks.
