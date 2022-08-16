@@ -61,6 +61,7 @@ Content-type: application/json
 Payload:
 An object containing:
 - items: An array of order items
+
         - order item: 
         1. drinkName : String - Name of the drink (Required)
         2. toppingNames: List of String(s) - Name of the required toppings (Optional)
